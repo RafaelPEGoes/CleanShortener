@@ -2,6 +2,7 @@
 using System.Net;
 using CleanShortener.Application;
 using CleanShortener.Domain;
+using System.Configuration;
 
 namespace CleanShortener.Presentation.Controllers;
 
@@ -23,7 +24,7 @@ public class UrlShortenerController : ControllerBase
     {
         var shortUrlDto = urlRequest.ToShortUrlDto();
 
-        var createUrlResult = _urlShortenerHandler.CreateShortUrl(urlRequest);
+        var createUrlResult = _urlShortenerHandler.CreateShortUrl(shortUrlDto);
 
         if (!createUrlResult.IsSuccess)
         {

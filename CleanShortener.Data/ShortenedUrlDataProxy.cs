@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using CleanShortener.Application;
 using CleanShortener.Domain;
-using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics;
 
 namespace CleanShortener.Data;
 
