@@ -4,7 +4,7 @@ using CleanShortener.Application;
 using CleanShortener.Domain;
 using System.Configuration;
 
-namespace CleanShortener.Controllers;
+namespace CleanShortener.Presentation.Controllers;
 
 [ApiController]
 [Route("/")]
@@ -32,7 +32,7 @@ public class UrlShortenerController : ControllerBase
         }
 
         var response = createUrlResult.Entity!.ToShortUrlResponse();
-        
+
         return Ok(response);
     }
 

@@ -1,9 +1,11 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using CleanShortener.Application;
 using CleanShortener.Domain;
+using System.Diagnostics;
 
 namespace CleanShortener.Data;
 
+[ExcludeFromCodeCoverage]
 public class ShortenedUrlDataProxy : IShortenedUrlDataProxy
 {
     private readonly IMemoryCache _cache;
@@ -21,7 +23,7 @@ public class ShortenedUrlDataProxy : IShortenedUrlDataProxy
     {
         if (_cache.TryGetValue<ShortUrl>(destination, out var shortenedUrl) && shortenedUrl is not null)
             return shortenedUrl;
-
+        
         var persistedUrl = _repository.GetByDestinationUrl(destination);
 
         if (persistedUrl is not null)
@@ -39,7 +41,7 @@ public class ShortenedUrlDataProxy : IShortenedUrlDataProxy
 
         if (persistedUrl is not null)
             PersistEntries(persistedUrl);
-
+        
         return persistedUrl!;
     }
 
