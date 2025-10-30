@@ -22,16 +22,14 @@ public class UrlShortenerController : ControllerBase
     [ProducesResponseType(type: typeof(ValidationErrors), statusCode: (int)HttpStatusCode.NotFound, contentType: "application/json")]
     public IActionResult Create([FromBody] ShortUrlRequest urlRequest)
     {
-        var shortUrlDto = urlRequest.ToShortUrlDto();
-
-        var createUrlResult = _urlShortenerHandler.CreateShortUrl(shortUrlDto);
+        var createUrlResult = _urlShortenerHandler.CreateShortUrl(urlRequest);
 
         if (!createUrlResult.IsSuccess)
         {
             return BadRequest(createUrlResult.ValidationErrors);
         }
 
-        var response = createUrlResult.Entity!.ToShortUrlResponse();
+        var response = createUrlResult.Entity;
 
         return Ok(response);
     }
