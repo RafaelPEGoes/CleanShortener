@@ -3,56 +3,91 @@
   "WorkspaceRootPath": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.domain\\shorturl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|solutionrelative:cleanshortener.domain\\shorturl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|solutionrelative:cleanshortener\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A64DE11-1219-4092-A78E-B7FFF1F49127}|CleanShortener.BDD.Demo\\CleanShortener.BDD.Demo.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.bdd.demo\\contextkeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A64DE11-1219-4092-A78E-B7FFF1F49127}|CleanShortener.BDD.Demo\\CleanShortener.BDD.Demo.csproj|solutionrelative:cleanshortener.bdd.demo\\contextkeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener\\controllers\\urlshortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|solutionrelative:cleanshortener\\controllers\\urlshortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.data\\dbcontexts\\cleanshortenerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|solutionrelative:cleanshortener.data\\dbcontexts\\cleanshortenerdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.application\\urlshortenerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|solutionrelative:cleanshortener.application\\urlshortenerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.data\\shortenedurldataproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|solutionrelative:cleanshortener.data\\shortenedurldataproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C321AD7-3B29-4460-A048-96A7A0DCBF22}|CleanShortener.Tests\\CleanShortener.Tests.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.tests\\architecturaltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C321AD7-3B29-4460-A048-96A7A0DCBF22}|CleanShortener.Tests\\CleanShortener.Tests.csproj|solutionrelative:cleanshortener.tests\\architecturaltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.data\\shortenedurlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|solutionrelative:cleanshortener.data\\shortenedurlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.data\\cleanshortener.data.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|solutionrelative:cleanshortener.data\\cleanshortener.data.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|solutionrelative:cleanshortener\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.application\\iurlshortenerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|solutionrelative:cleanshortener.application\\iurlshortenerhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C321AD7-3B29-4460-A048-96A7A0DCBF22}|CleanShortener.Tests\\CleanShortener.Tests.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.tests\\shorturltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C321AD7-3B29-4460-A048-96A7A0DCBF22}|CleanShortener.Tests\\CleanShortener.Tests.csproj|solutionrelative:cleanshortener.tests\\shorturltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.data\\shortenedurlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|solutionrelative:cleanshortener.data\\shortenedurlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C321AD7-3B29-4460-A048-96A7A0DCBF22}|CleanShortener.Tests\\CleanShortener.Tests.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.tests\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C321AD7-3B29-4460-A048-96A7A0DCBF22}|CleanShortener.Tests\\CleanShortener.Tests.csproj|solutionrelative:cleanshortener.tests\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.data\\shortenedurldataproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|solutionrelative:cleanshortener.data\\shortenedurldataproxy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.application\\shorturldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|solutionrelative:cleanshortener.application\\shorturldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.data\\cleanshortenerdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE9406BD-A33B-409A-A2D3-B5F55212CF73}|CleanShortener.Data\\CleanShortener.Data.csproj|solutionrelative:cleanshortener.data\\cleanshortenerdbcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.application\\shorturlresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|solutionrelative:cleanshortener.application\\shorturlresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCB443FA-7834-AA10-0C5E-64EDCC4B9329}|CleanShortener.Tests\\CleanShortener.Tests.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.tests\\cleanshortener.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FCB443FA-7834-AA10-0C5E-64EDCC4B9329}|CleanShortener.Tests\\CleanShortener.Tests.csproj|solutionrelative:cleanshortener.tests\\cleanshortener.tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.application\\ishortenedurlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A745189B-69F5-439F-B49D-A5A17B76DEF7}|CleanShortener.Application\\CleanShortener.Application.csproj|solutionrelative:cleanshortener.application\\ishortenedurlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.domain\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|solutionrelative:cleanshortener.domain\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.domain\\shorturl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|solutionrelative:cleanshortener.domain\\shorturl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.Presentation.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener\\controllers\\urlshortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.Presentation.csproj|solutionrelative:cleanshortener\\controllers\\urlshortenercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FCB443FA-7834-AA10-0C5E-64EDCC4B9329}|CleanShortener.Tests\\CleanShortener.Tests.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.tests\\architecturaltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCB443FA-7834-AA10-0C5E-64EDCC4B9329}|CleanShortener.Tests\\CleanShortener.Tests.csproj|solutionrelative:cleanshortener.tests\\architecturaltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.domain\\valueobjects\\either.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|solutionrelative:cleanshortener.domain\\valueobjects\\either.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.domain\\validationerrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|solutionrelative:cleanshortener.domain\\validationerrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FCB443FA-7834-AA10-0C5E-64EDCC4B9329}|CleanShortener.Tests\\CleanShortener.Tests.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.tests\\shorturltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FCB443FA-7834-AA10-0C5E-64EDCC4B9329}|CleanShortener.Tests\\CleanShortener.Tests.csproj|solutionrelative:cleanshortener.tests\\shorturltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.domain\\cleanshortener.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|solutionrelative:cleanshortener.domain\\cleanshortener.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener.domain\\valueobjects\\urlcreationerrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E4D9FBD4-C583-44AF-980C-85656EC904CE}|CleanShortener.Domain\\CleanShortener.Domain.csproj|solutionrelative:cleanshortener.domain\\valueobjects\\urlcreationerrors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|c:\\users\\rafae\\source\\repos\\cleanshortener\\cleanshortener\\cleanshortener.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{192B460C-44AF-45E6-8A96-022CDBF457B1}|CleanShortener\\CleanShortener.csproj|solutionrelative:cleanshortener\\cleanshortener.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,32 +97,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ArchitecturalTests.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ArchitecturalTests.cs",
-              "RelativeDocumentMoniker": "CleanShortener.Tests\\ArchitecturalTests.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ArchitecturalTests.cs",
-              "RelativeToolTip": "CleanShortener.Tests\\ArchitecturalTests.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAiwFoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T23:44:04.507Z",
+              "DocumentIndex": 21,
+              "Title": "CleanShortener",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\CleanShortener.csproj",
+              "RelativeDocumentMoniker": "CleanShortener\\CleanShortener.csproj",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\CleanShortener.csproj",
+              "RelativeToolTip": "CleanShortener\\CleanShortener.csproj",
+              "ViewState": "AgIAABkAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-18T23:19:48.732Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Result.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\Result.cs",
-              "RelativeDocumentMoniker": "CleanShortener.Domain\\Result.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\Result.cs",
-              "RelativeToolTip": "CleanShortener.Domain\\Result.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "ContextKeys.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.BDD.Demo\\ContextKeys.cs",
+              "RelativeDocumentMoniker": "CleanShortener.BDD.Demo\\ContextKeys.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.BDD.Demo\\ContextKeys.cs",
+              "RelativeToolTip": "CleanShortener.BDD.Demo\\ContextKeys.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T14:19:19.86Z"
+              "WhenOpened": "2025-12-18T22:40:04.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\Program.cs",
+              "RelativeDocumentMoniker": "CleanShortener\\Program.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\Program.cs",
+              "RelativeToolTip": "CleanShortener\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T01:09:43.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UrlShortenerHandler.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\UrlShortenerHandler.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Application\\UrlShortenerHandler.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\UrlShortenerHandler.cs",
+              "RelativeToolTip": "CleanShortener.Application\\UrlShortenerHandler.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T22:47:15.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShortUrl.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ShortUrl.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Domain\\ShortUrl.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ShortUrl.cs",
+              "RelativeToolTip": "CleanShortener.Domain\\ShortUrl.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAkwFQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T01:13:35.285Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -97,137 +172,228 @@
               "RelativeDocumentMoniker": "CleanShortener.Application\\IUrlShortenerHandler.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\IUrlShortenerHandler.cs",
               "RelativeToolTip": "CleanShortener.Application\\IUrlShortenerHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T16:29:23.469Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ShortUrl.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ShortUrl.cs",
-              "RelativeDocumentMoniker": "CleanShortener.Domain\\ShortUrl.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ShortUrl.cs",
-              "RelativeToolTip": "CleanShortener.Domain\\ShortUrl.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T00:08:36.275Z",
+              "WhenOpened": "2025-12-18T02:21:55.887Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ShortUrlDto.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\ShortUrlDto.cs",
-              "RelativeDocumentMoniker": "CleanShortener.Application\\ShortUrlDto.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\ShortUrlDto.cs",
-              "RelativeToolTip": "CleanShortener.Application\\ShortUrlDto.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAwwC4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-14T23:29:59.53Z"
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\appsettings.json",
+              "RelativeDocumentMoniker": "CleanShortener\\appsettings.json",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\appsettings.json",
+              "RelativeToolTip": "CleanShortener\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-18T02:43:06.22Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UrlShortenerHandler.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\UrlShortenerHandler.cs",
-              "RelativeDocumentMoniker": "CleanShortener.Application\\UrlShortenerHandler.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\UrlShortenerHandler.cs",
-              "RelativeToolTip": "CleanShortener.Application\\UrlShortenerHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "ShortUrlResponse.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\ShortUrlResponse.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Application\\ShortUrlResponse.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\ShortUrlResponse.cs",
+              "RelativeToolTip": "CleanShortener.Application\\ShortUrlResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T22:47:15.861Z",
+              "WhenOpened": "2025-10-29T18:28:17.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\18\\Insiders\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAAHoIAAAAAAAAAAAwwIwIAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-12-18T02:25:00.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ArchitecturalTests.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ArchitecturalTests.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Tests\\ArchitecturalTests.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ArchitecturalTests.cs",
+              "RelativeToolTip": "CleanShortener.Tests\\ArchitecturalTests.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAIwFIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T23:44:04.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ValidationErrors.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ValidationErrors.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Domain\\ValidationErrors.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ValidationErrors.cs",
+              "RelativeToolTip": "CleanShortener.Domain\\ValidationErrors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T23:40:32.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ShortUrlTests.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ShortUrlTests.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Tests\\ShortUrlTests.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ShortUrlTests.cs",
+              "RelativeToolTip": "CleanShortener.Tests\\ShortUrlTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T23:46:37.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UrlCreationErrors.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ValueObjects\\UrlCreationErrors.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Domain\\ValueObjects\\UrlCreationErrors.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ValueObjects\\UrlCreationErrors.cs",
+              "RelativeToolTip": "CleanShortener.Domain\\ValueObjects\\UrlCreationErrors.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T01:04:09.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CleanShortener.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\CleanShortener.Domain.csproj",
+              "RelativeDocumentMoniker": "CleanShortener.Domain\\CleanShortener.Domain.csproj",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\CleanShortener.Domain.csproj",
+              "RelativeToolTip": "CleanShortener.Domain\\CleanShortener.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-12T23:07:25.045Z",
               "EditorCaption": ""
             }
           ]
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GlobalUsings.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\GlobalUsings.cs",
-              "RelativeDocumentMoniker": "CleanShortener.Tests\\GlobalUsings.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\GlobalUsings.cs",
-              "RelativeToolTip": "CleanShortener.Tests\\GlobalUsings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:36:54.562Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ShortUrlTests.cs",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ShortUrlTests.cs",
-              "RelativeDocumentMoniker": "CleanShortener.Tests\\ShortUrlTests.cs",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\ShortUrlTests.cs",
-              "RelativeToolTip": "CleanShortener.Tests\\ShortUrlTests.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAwwDwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:11:51.589Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "UrlShortenerController.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\Controllers\\UrlShortenerController.cs",
               "RelativeDocumentMoniker": "CleanShortener\\Controllers\\UrlShortenerController.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener\\Controllers\\UrlShortenerController.cs",
               "RelativeToolTip": "CleanShortener\\Controllers\\UrlShortenerController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-25T16:47:52.63Z"
+              "WhenOpened": "2025-10-25T16:47:52.63Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "CleanShortenerDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\DbContexts\\CleanShortenerDbContext.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Data\\DbContexts\\CleanShortenerDbContext.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\DbContexts\\CleanShortenerDbContext.cs",
+              "RelativeToolTip": "CleanShortener.Data\\DbContexts\\CleanShortenerDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T03:06:06.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ShortenedUrlRepository.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\ShortenedUrlRepository.cs",
               "RelativeDocumentMoniker": "CleanShortener.Data\\ShortenedUrlRepository.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\ShortenedUrlRepository.cs",
               "RelativeToolTip": "CleanShortener.Data\\ShortenedUrlRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T16:54:23.414Z"
+              "WhenOpened": "2025-10-18T16:54:23.414Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ShortenedUrlDataProxy.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\ShortenedUrlDataProxy.cs",
               "RelativeDocumentMoniker": "CleanShortener.Data\\ShortenedUrlDataProxy.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\ShortenedUrlDataProxy.cs",
               "RelativeToolTip": "CleanShortener.Data\\ShortenedUrlDataProxy.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowDUAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T16:52:32.76Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
+              "Title": "CleanShortenerDbContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\CleanShortenerDbContextFactory.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Data\\CleanShortenerDbContextFactory.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\CleanShortenerDbContextFactory.cs",
+              "RelativeToolTip": "CleanShortener.Data\\CleanShortenerDbContextFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T21:23:00.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CleanShortener.Tests.csproj",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\CleanShortener.Tests.csproj",
+              "RelativeDocumentMoniker": "CleanShortener.Tests\\CleanShortener.Tests.csproj",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Tests\\CleanShortener.Tests.csproj",
+              "RelativeToolTip": "CleanShortener.Tests\\CleanShortener.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-18T02:53:46.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "IShortenedUrlRepository.cs",
               "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\IShortenedUrlRepository.cs",
               "RelativeDocumentMoniker": "CleanShortener.Application\\IShortenedUrlRepository.cs",
               "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Application\\IShortenedUrlRepository.cs",
               "RelativeToolTip": "CleanShortener.Application\\IShortenedUrlRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAARAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T15:40:14.991Z"
+              "WhenOpened": "2025-12-18T02:12:57.437Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CleanShortener.Data",
-              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\CleanShortener.Data.csproj",
-              "RelativeDocumentMoniker": "CleanShortener.Data\\CleanShortener.Data.csproj",
-              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Data\\CleanShortener.Data.csproj",
-              "RelativeToolTip": "CleanShortener.Data\\CleanShortener.Data.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-22T00:25:19.575Z"
+              "DocumentIndex": 16,
+              "Title": "Either.cs",
+              "DocumentMoniker": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ValueObjects\\Either.cs",
+              "RelativeDocumentMoniker": "CleanShortener.Domain\\ValueObjects\\Either.cs",
+              "ToolTip": "C:\\Users\\rafae\\source\\repos\\CleanShortener\\CleanShortener.Domain\\ValueObjects\\Either.cs",
+              "RelativeToolTip": "CleanShortener.Domain\\ValueObjects\\Either.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T02:20:24.247Z",
+              "EditorCaption": ""
             }
           ]
         }

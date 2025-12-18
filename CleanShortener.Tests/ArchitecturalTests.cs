@@ -16,7 +16,7 @@ public class ArchitecturalTests
         // arrange & act 
         var result =
             Types
-            .InAssembly(Assembly.LoadFrom(DomainModuleDll))
+            .InAssembly(Assembly.Load(DomainModuleDll))
             .ShouldNot()
             .HaveDependencyOn(ApplicationModuleDll)
             .GetResult()
@@ -32,7 +32,7 @@ public class ArchitecturalTests
         // arrange & act 
         var result =
             Types
-            .InAssembly(Assembly.LoadFrom(DomainModuleDll))
+            .InAssembly(Assembly.Load(DomainModuleDll))
             .ShouldNot()
             .HaveDependencyOn(PresentationModuleDll)
             .GetResult()
@@ -48,7 +48,7 @@ public class ArchitecturalTests
         // arrange & act 
         var result =
             Types
-            .InAssembly(Assembly.LoadFrom(DomainModuleDll))
+            .InAssembly(Assembly.Load(DomainModuleDll))
             .ShouldNot()
             .HaveDependencyOn(DataModuleDll)
             .GetResult()
@@ -64,7 +64,7 @@ public class ArchitecturalTests
         // arrange & act 
         var result =
             Types
-            .InAssembly(Assembly.LoadFrom(ApplicationModuleDll))
+            .InAssembly(Assembly.Load(ApplicationModuleDll))
             .ShouldNot()
             .HaveDependencyOn(DataModuleDll)
             .GetResult()
@@ -80,7 +80,7 @@ public class ArchitecturalTests
         // arrange & act 
         var result =
             Types
-            .InAssembly(Assembly.LoadFrom(ApplicationModuleDll))
+            .InAssembly(Assembly.Load(ApplicationModuleDll))
             .ShouldNot()
             .HaveDependencyOn(PresentationModuleDll)
             .GetResult()

@@ -22,7 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CleanShortener.Application\CleanShortener.Application.csproj" />
     <ProjectReference Include="..\CleanShortener.Domain\CleanShortener.Domain.csproj" />
-    <ProjectReference Include="..\CleanShortener\CleanShortener.Presentation.csproj" />
+    <!--<ProjectReference Include="..\CleanShortener\CleanShortener.Presentation.csproj" />-->
   </ItemGroup>
 
   <ItemGroup>

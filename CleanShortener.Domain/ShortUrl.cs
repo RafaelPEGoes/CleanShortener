@@ -1,9 +1,14 @@
-﻿namespace CleanShortener.Domain;
+﻿using CleanShortener.Domain.ValueObjects;
 
-public class ShortUrl
+namespace CleanShortener.Domain;
+
+public class ShortUrl : DomainEntity
 {
+    public Guid Id { get; } = Guid.NewGuid();
+
     public string OriginalUrl { get; set; }
 
+    // probably primitive obsession at this point but eh, what really matters is the friendships we make along the way
     public string ShortenedUrl { get; init; }
 
     private const int UniqueIdentifierLength = 6;
@@ -14,17 +19,22 @@ public class ShortUrl
 
     private static readonly IReadOnlyList<string> _allowedUriSchemes = [Uri.UriSchemeHttp, Uri.UriSchemeHttps];
 
-    public ShortUrl(string originalUrl)
+    // messed up but will stay until I figure a workaround.
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+    public ShortUrl() { }
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+
+    private ShortUrl(string originalUrl, string shortenerUrl)
     {
         this.OriginalUrl = originalUrl;
-        this.ShortenedUrl = GetShortenedUrl();
+        this.ShortenedUrl = GetShortenedUrl(shortenerUrl);
     }
 
-    private string GetShortenedUrl()
+    private static string GetShortenedUrl(string shortenerUrl)
     {
         var uniqueIdentifier = GetUniqueIdentifierForUrl(length: UniqueIdentifierLength);
 
-        return uniqueIdentifier;
+        return $"{shortenerUrl}/{uniqueIdentifier}";
     }
 
     private static string GetUniqueIdentifierForUrl(int length)
@@ -37,24 +47,40 @@ public class ShortUrl
         return string.Concat(output);
     }
 
-    public static ValidationErrors Validate(string url)
+    private static ValidationErrors Validate(string url, string shortenerUrl)
     {
-        ValidationErrors errors = new();
+        // still an invariant, but that's a problem that resides in the application itself
+        // and holds no meaning to the final user, that's why an Exception seems more appropriate.
+        ArgumentNullException.ThrowIfNullOrEmpty(shortenerUrl);
 
-        if (string.IsNullOrEmpty(url))
-            errors.Add($"URL is null or empty.");
+        // short-circuit because if will fail in the next checks anyway. The response
+        // will be cleaner at least, although it makes the validation flow harder to reason about.
+        if (string.IsNullOrWhiteSpace(url))
+            return new ValidationErrors(UrlCreationErrors.NullOrEmpty());
+
+        List<string> errors = [];
+        // This is a very interesting one.
+        // Clearly this is an invariant as users should not be allowed to shorten
+        // links that point to the shortener itself (made up this one), but how the application should
+        // go about this looking from user's perspective?
+        if (url.Contains(shortenerUrl))
+            errors.Add(UrlCreationErrors.Invalid(url));
 
         if (!Uri.TryCreate(url, uriKind: UriKind.Absolute, out var parsedUri))
-            errors.Add($"{url} is not a valid URL.");
+            errors.Add(UrlCreationErrors.Invalid(url));
 
-        if (!IsValidProtocol(parsedUri!))
-            errors.Add($"URL does not use a valid protocol. Accepted values are HTTP and HTTPS.");
+        if (!_allowedUriSchemes.Contains(parsedUri?.Scheme))
+            errors.Add(UrlCreationErrors.InvalidProtocol(_allowedUriSchemes));
 
-        return errors;
+        return new ValidationErrors(errors);
     }
 
-    private static bool IsValidProtocol(Uri uri)
+    public static Either<ShortUrl, ValidationErrors> TryCreate(string originalUrl, string shortenerUrl)
     {
-        return _allowedUriSchemes.Contains(uri?.Scheme);
+        var validationErrors = Validate(originalUrl, shortenerUrl);
+
+        return validationErrors.HasErrors
+            ? Either<ShortUrl, ValidationErrors>.Of(validationErrors)
+            : Either<ShortUrl, ValidationErrors>.Of(new ShortUrl(originalUrl, shortenerUrl));
     }
 }
