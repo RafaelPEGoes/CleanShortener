@@ -11,40 +11,40 @@ public class UrlShortenerHandler : IUrlShortenerHandler
         _urlDataProxy = urlDataRepository;
     }
 
-    public Result<ShortUrlDto, ValidationErrors> CreateShortUrl(ShortUrlDto shortUrlDto)
+    public Result<ShortUrlResponse, ValidationErrors> CreateShortUrl(ShortUrlRequest shortUrlRequest)
     {
         // TODO: normalize URL, verify if it is reachable using a Specification, make it async etc...
-        var validationResult = ShortUrl.Validate(shortUrlDto.OriginalUrl);
+        var validationResult = ShortUrl.Validate(shortUrlRequest.Url);
 
         if (validationResult.HasErrors)
-            return Result<ShortUrlDto, ValidationErrors>.Build(validationResult);
+            return Result<ShortUrlResponse, ValidationErrors>.Build(validationResult);
 
-        var persistedUrl = GetShortenedUrl(shortUrlDto);
+        var persistedUrl = GetShortenedUrl(shortUrlRequest);
         
         if (persistedUrl is not null)
-            return Result<ShortUrlDto, ValidationErrors>.Build(persistedUrl);
+            return Result<ShortUrlResponse, ValidationErrors>.Build(persistedUrl);
 
-        var shortUrl = new ShortUrl(shortUrlDto.OriginalUrl);
+        var shortUrl = new ShortUrl(shortUrlRequest.Url);
 
         _urlDataProxy.Save(shortUrl);
 
-        shortUrlDto.ShortenedUrl = shortUrl.ShortenedUrl;
+        var response = new ShortUrlResponse(shortUrl);
 
-        return Result<ShortUrlDto, ValidationErrors>.Build(shortUrlDto);
+        return Result<ShortUrlResponse, ValidationErrors>.Build(response);
     }
 
-    public ShortUrlDto GetShortenedUrl(ShortUrlDto shortUrlDto)
+    public ShortUrlResponse GetShortenedUrl(ShortUrlRequest shortUrlRequest)
     {
-        var persistedUrl = _urlDataProxy.GetByDestinationUrl(shortUrlDto.OriginalUrl);
+        var persistedUrl = _urlDataProxy.GetByDestinationUrl(shortUrlRequest.Url);
 
-        return persistedUrl.ToShortUrlDto();
+        return new ShortUrlResponse(persistedUrl);
     }
 
-    public ShortUrlDto GetShortenedUrlById(string shortUrlId)
+    public ShortUrlResponse GetShortenedUrlById(string shortUrlId)
     {
         // convert cache to ValueTask, it will most likely be completed syncronously 
         var persistedUrl = _urlDataProxy.GetShortenedUrlById(shortUrlId);
 
-        return persistedUrl.ToShortUrlDto();
+        return new ShortUrlResponse(persistedUrl);
     }
 }

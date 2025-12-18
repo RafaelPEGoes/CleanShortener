@@ -4,9 +4,9 @@ namespace CleanShortener.Application;
 
 public interface IUrlShortenerHandler
 {
-    public Result<ShortUrlDto, ValidationErrors> CreateShortUrl(ShortUrlDto shortUrlRequest);
+    public Result<ShortUrlResponse, ValidationErrors> CreateShortUrl(ShortUrlRequest shortUrlRequest);
 
-    public ShortUrlDto GetShortenedUrl(ShortUrlDto shortUrlDto);
+    public ShortUrlResponse GetShortenedUrl(ShortUrlRequest shortUrlRequest);
 
-    public ShortUrlDto GetShortenedUrlById(string shortUrlId);
+    public ShortUrlResponse GetShortenedUrlById(string shortUrlId);
 }

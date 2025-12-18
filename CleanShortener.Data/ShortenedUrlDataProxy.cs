@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using CleanShortener.Application;
 using CleanShortener.Domain;
-using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CleanShortener.Data;
 
@@ -19,12 +19,12 @@ public class ShortenedUrlDataProxy : IShortenedUrlDataProxy
         _repository = repository;
     }
 
-    public ShortUrl GetByDestinationUrl(string destination)
+    public async Task<ShortUrl> GetByDestinationUrlAsync(string destination)
     {
         if (_cache.TryGetValue<ShortUrl>(destination, out var shortenedUrl) && shortenedUrl is not null)
             return shortenedUrl;
-        
-        var persistedUrl = _repository.GetByDestinationUrl(destination);
+
+        var persistedUrl = await _repository.GetByDestinationUrlAsync(destination);
 
         if (persistedUrl is not null)
             PersistEntries(persistedUrl);
@@ -32,26 +32,26 @@ public class ShortenedUrlDataProxy : IShortenedUrlDataProxy
         return persistedUrl!;
     }
 
-    public ShortUrl GetShortenedUrlById(string shortUrlId)
+    public async Task<ShortUrl> GetShortenedUrlByIdAsync(string shortUrlId)
     {
         if (_cache.TryGetValue<ShortUrl>(shortUrlId, out var shortenedUrl) && shortenedUrl is not null)
             return shortenedUrl;
 
-        var persistedUrl = _repository.GetByDestinationUrl(shortUrlId);
+        var persistedUrl = await _repository.GetByDestinationUrlAsync(shortUrlId);
 
         if (persistedUrl is not null)
             PersistEntries(persistedUrl);
-        
+
         return persistedUrl!;
     }
 
-    public ShortUrl Save(ShortUrl shortUrl)
+    public async Task<ShortUrl> SaveAsync(ShortUrl url)
     {
-        _repository.Save(shortUrl);
+        await _repository.SaveAsync(url);
 
-        PersistEntries(shortUrl);
+        PersistEntries(url);
 
-        return shortUrl;
+        return url;
     }
 
     private void PersistEntries(ShortUrl shortUrl)
