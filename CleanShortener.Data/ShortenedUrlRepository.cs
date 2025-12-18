@@ -1,31 +1,30 @@
 ﻿using CleanShortener.Application;
+using CleanShortener.Data.DbContexts;
 using CleanShortener.Domain;
-using System.Collections.Concurrent;
+using Microsoft.EntityFrameworkCore;
 
 namespace CleanShortener.Data;
 
-public class ShortenedUrlRepository : IShortenedUrlRepository
+public class ShortenedUrlRepository(CleanShortenerDbContext database) : IShortenedUrlRepository
 {
-    private static ConcurrentBag<ShortUrl> _database = new();
+    private readonly CleanShortenerDbContext _database = database;
 
-    public ShortUrl Save(ShortUrl url)
+    public async Task<ShortUrl> SaveAsync(ShortUrl url)
     {
-        _database.Add(url);
+        await _database.ShortUrls.AddAsync(url);
+
+        var isSaved = await _database.SaveChangesAsync();
 
         return url;
     }
 
-    public ShortUrl GetByDestinationUrl(string destination)
+    public async Task<ShortUrl> GetByDestinationUrlAsync(string destination)
     {
-        return _database
-            .Where(u => u.OriginalUrl == destination)
-            .FirstOrDefault()!;
+        return await _database.ShortUrls.FirstOrDefaultAsync(u => u.OriginalUrl == destination);
     }
 
-    public ShortUrl GetShortenedUrlById(string shortUrlId)
+    public async Task<ShortUrl> GetShortenedUrlByIdAsync(string shortUrlId)
     {
-        return _database
-            .Where(u => u.ShortenedUrl == shortUrlId)
-            .FirstOrDefault()!;
+        return await _database.ShortUrls.FirstOrDefaultAsync(u => u.ShortenedUrl == shortUrlId);
     }
 }
