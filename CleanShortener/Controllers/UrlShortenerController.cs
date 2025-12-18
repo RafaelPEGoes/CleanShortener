@@ -2,27 +2,33 @@
 using System.Net;
 using CleanShortener.Application;
 using CleanShortener.Domain;
-using System.Configuration;
+using System.Diagnostics.Metrics;
 
-namespace CleanShortener.Presentation.Controllers;
+namespace CleanShortener.Controllers;
 
 [ApiController]
 [Route("/")]
 public class UrlShortenerController : ControllerBase
 {
     private readonly IUrlShortenerHandler _urlShortenerHandler;
+    private readonly IMeterFactory _meterFactory;
+    private readonly Counter<long> _requests;
 
-    public UrlShortenerController(IUrlShortenerHandler urlShortenerService)
+    public UrlShortenerController(IUrlShortenerHandler urlShortenerService, IMeterFactory meterFactory)
     {
         _urlShortenerHandler = urlShortenerService;
+        _meterFactory = meterFactory;
+        _requests = _meterFactory
+            .Create("UrlShortenerController")
+            .CreateCounter<long>("Requests");
     }
 
     [HttpPost("/create")]
     [ProducesResponseType(type: typeof(ShortUrlResponse), statusCode: (int)HttpStatusCode.Created, contentType: "application/json")]
     [ProducesResponseType(type: typeof(ValidationErrors), statusCode: (int)HttpStatusCode.NotFound, contentType: "application/json")]
-    public IActionResult Create([FromBody] ShortUrlRequest urlRequest)
+    public async Task<IActionResult> Create([FromBody] ShortUrlRequest urlRequest)
     {
-        var createUrlResult = _urlShortenerHandler.CreateShortUrl(urlRequest);
+        var createUrlResult = await _urlShortenerHandler.CreateShortUrlAsync(urlRequest);
 
         if (!createUrlResult.IsSuccess)
         {
@@ -31,18 +37,22 @@ public class UrlShortenerController : ControllerBase
 
         var response = createUrlResult.Entity;
 
-        return Ok(response);
+        _requests.Add(1);
+
+        return Created(response!.ShortUrl, response);
     }
 
     [HttpGet("/{shortUrlId}")]
     [ProducesResponseType((int)HttpStatusCode.Redirect)]
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
-    public IActionResult GoToUrl([FromRoute] string shortUrlId)
+    public async Task<IActionResult> GoToUrl([FromRoute] string shortUrlId)
     {
-        var destinationUrl = _urlShortenerHandler.GetShortenedUrlById(shortUrlId);
+        var destinationUrl = await _urlShortenerHandler.GetShortenedUrlByIdAsync(shortUrlId);
 
         if (destinationUrl == null)
             return NotFound();
+
+        _requests.Add(1);
 
         return Redirect(destinationUrl.OriginalUrl);
     }
