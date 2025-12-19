@@ -2,5 +2,5 @@
 
 public interface IHttpClientHelper
 {
-    Task<TResponse> PostAsync<TRequest, TResponse>(string endpoint, TRequest request);
+    Task<ApiResponse<TResponse>> PostAsync<TRequest, TResponse>(string endpoint, TRequest request);
 }

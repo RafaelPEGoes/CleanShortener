@@ -12,12 +12,18 @@ public class HttpClientHelper : IHttpClientHelper
     {
         _apiContext = apiContext;
     }
-    public async Task<TResponse> PostAsync<TRequest, TResponse>(string endpoint, TRequest request)
+    public async Task<ApiResponse<TResponse>> PostAsync<TRequest, TResponse>(string endpoint, TRequest request)
     {
         using var rawResponse = await _apiContext.HttpClient.PostAsJsonAsync(endpoint, request);
 
         rawResponse.EnsureSuccessStatusCode();
 
-        return await rawResponse.Content.ReadFromJsonAsync<TResponse>()! ?? throw new InvalidOperationException($"HttpResponse from {endpoint} was null.");
+        var parsedResponseBody = await rawResponse.Content.ReadFromJsonAsync<TResponse>();
+
+        return new ApiResponse<TResponse>
+        {
+            HttpResponse = rawResponse,
+            ParsedResponseBody = parsedResponseBody!
+        };
     }
 }
