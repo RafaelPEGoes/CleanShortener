@@ -11,7 +11,7 @@
     public string RefreshTokenEndpoint =>
         $"{BaseUrl}/register";
 
-    public string PostShortUrl =>
+    public string CreateShortUrl =>
         $"{BaseUrl}/create";
 
     public string GetRedirectToUrl =>

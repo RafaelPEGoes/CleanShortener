@@ -9,5 +9,5 @@ public class TestContext(IOptions<ServiceUrls> serviceUrls, IHttpClientHelper ht
     public ServiceUrls ServiceUrls { get; } = serviceUrls.Value;
     public IHttpClientHelper HttpClient { get; } = httpClient;
 
-    public AccessTokenResponse? ServiceToken { get; set; }
+    public AccessTokenResponse? AccessTokenResponse { get; set; }
 }

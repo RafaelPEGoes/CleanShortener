@@ -7,5 +7,5 @@ public interface ITestContext
 {
     public ServiceUrls ServiceUrls { get; }
     public IHttpClientHelper HttpClient { get; }
-    public AccessTokenResponse? ServiceToken { get; set; }
+    public AccessTokenResponse? AccessTokenResponse { get; set; }
 }
