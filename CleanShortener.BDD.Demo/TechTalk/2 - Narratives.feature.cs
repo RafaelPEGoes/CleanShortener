@@ -17,22 +17,22 @@ namespace CleanShortener.BDD.Demo.TechTalk
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class DelecaoDeURLsEncurtadasFeature : object, global::Xunit.IClassFixture<DelecaoDeURLsEncurtadasFeature.FixtureData>, global::Xunit.IAsyncLifetime
+    public partial class _2_NarrativesFeature : object, global::Xunit.IClassFixture<_2_NarrativesFeature.FixtureData>, global::Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("pt-BR"), "TechTalk", "Deleção de URLs encurtadas", "\tSendo um usuário do sistema\r\n\tEu quero verificar que o sistema deleta corretamen" +
-                "te uma URL\r\n\tDe forma que satisfaça os meus requisitos de negócio", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "TechTalk", "2 - Narratives", "As a scrum team member\r\nI want to show the importance of the Narrative Section\r\nT" +
+                "o create well documented specifications inteligible by any reader", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "ExemploEmPortugues.feature"
+#line 1 "2 - Narratives.feature"
 #line hidden
         
-        public DelecaoDeURLsEncurtadasFeature(DelecaoDeURLsEncurtadasFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public _2_NarrativesFeature(_2_NarrativesFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -106,7 +106,7 @@ namespace CleanShortener.BDD.Demo.TechTalk
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("TechTalk/ExemploEmPortugues.feature.ndjson", 3);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("TechTalk/2 - Narratives.feature.ndjson", 3);
         }
         
         async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
@@ -134,19 +134,21 @@ namespace CleanShortener.BDD.Demo.TechTalk
             await this.TestTearDownAsync();
         }
         
-        [global::Xunit.SkippableFactAttribute(DisplayName="URL deletada do sistema não é mais acessível")]
-        [global::Xunit.TraitAttribute("FeatureTitle", "Deleção de URLs encurtadas")]
-        [global::Xunit.TraitAttribute("Description", "URL deletada do sistema não é mais acessível")]
-        public async global::System.Threading.Tasks.Task URLDeletadaDoSistemaNaoEMaisAcessivel()
+        [global::Xunit.SkippableFactAttribute(DisplayName="Shortened urls should be invalidated after deletion")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "2 - Narratives")]
+        [global::Xunit.TraitAttribute("Description", "Shortened urls should be invalidated after deletion")]
+        [global::Xunit.TraitAttribute("Category", "DeleteShortUrl")]
+        public async global::System.Threading.Tasks.Task ShortenedUrlsShouldBeInvalidatedAfterDeletion()
         {
-            string[] tagsOfScenario = ((string[])(null));
+            string[] tagsOfScenario = new string[] {
+                    "DeleteShortUrl"};
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("URL deletada do sistema não é mais acessível", "\tSendo um usuário do sistema\r\n\tEu quero deletar uma URL que eu criei\r\n\tDe forma q" +
-                    "ue tentativas de acessá-la após deleção não sejam bem-sucedidas.", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Shortened urls should be invalidated after deletion", "\tAs a user of CleanShortener\r\n\tI want the capability of deleting short links I\'ve" +
+                    " previously created\r\n\tSo they can not be used when they\'re no longer necessary", tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 7
+#line 8
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -156,29 +158,14 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 12
- await testRunner.GivenAsync("a URL \"www.google.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dada ");
-#line hidden
-#line 13
- await testRunner.WhenAsync("eu solicito uma URL encurtada", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
-#line hidden
 #line 14
- await testRunner.ThenAsync("eu recebo uma resposta contendo uma URL encurtada", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
+ await testRunner.GivenAsync("the url \"https://www.google.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 15
+ await testRunner.WhenAsync("I request a shortened url", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 16
- await testRunner.WhenAsync("eu solicito a deleção da URL encurtada", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
-#line hidden
-#line 17
- await testRunner.ThenAsync("eu recebo uma resposta indicando que o recurso foi corretamente deletado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
-#line hidden
-#line 19
- await testRunner.GivenAsync("a URL encurtada que criei anteriormente", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dada ");
-#line hidden
-#line 20
- await testRunner.WhenAsync("eu tento acessar a URL original por meio da URL encurtada", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
-#line hidden
-#line 21
- await testRunner.ThenAsync("eu me deparo com um erro", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
+ await testRunner.ThenAsync("I receive a shortened url in response", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -191,12 +178,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await DelecaoDeURLsEncurtadasFeature.FeatureSetupAsync();
+                await _2_NarrativesFeature.FeatureSetupAsync();
             }
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await DelecaoDeURLsEncurtadasFeature.FeatureTearDownAsync();
+                await _2_NarrativesFeature.FeatureTearDownAsync();
             }
         }
     }
