@@ -1,5 +1,4 @@
 ﻿using CleanShortener.BDD.Demo.Configuration;
-using Microsoft.AspNetCore.Identity.Data;
 using Reqnroll;
 using System.Net.Http.Json;
 using System.Net.Http.Headers;
