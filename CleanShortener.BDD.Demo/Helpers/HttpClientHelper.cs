@@ -59,4 +59,21 @@ public class HttpClientHelper : IHttpClientHelper
             ParsedResponseBody = parsedResponseBody!
         };
     }
+
+    public async Task<ApiResponse<TResponse>> DeleteAsync<TResponse>(string resource)
+    {
+
+        if (_scenarioContext.TryGetValue<AccessTokenResponse>(ContextKeys.AccessTokenResponse, out var authnTokenResponse))
+        {
+            _apiContext.HttpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authnTokenResponse.AccessToken);
+        }
+
+        using var rawResponse = await _apiContext.HttpClient.DeleteAsync(resource);
+
+        return new ApiResponse<TResponse>
+        {
+            HttpResponse = rawResponse,
+            ParsedResponseBody = default,
+        };
+    }
 }
