@@ -2,7 +2,7 @@
 
 public class ApiResponse<TResponse>
 {
-    public required TResponse ParsedResponseBody { get; init; }
+    public required TResponse? ParsedResponseBody { get; init; }
 
     public required HttpResponseMessage HttpResponse { get; init; }
 }
