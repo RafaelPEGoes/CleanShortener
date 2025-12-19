@@ -7,7 +7,7 @@ using CleanShortener.BDD.Demo.Configuration;
 namespace CleanShortener.BDD.Demo.CreateUrl;
 
 [Binding]
-internal class CreateShortURLStepDefinitions(ScenarioContext scenarioContext, ApiTestContext apiTestContext)
+public class CreateShortUrlStepDefinitions(ScenarioContext scenarioContext, ApiTestContext apiTestContext)
 {
     private readonly ScenarioContext _scenarioContext = scenarioContext;
     private readonly ApiTestContext _apiContext = apiTestContext;
