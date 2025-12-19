@@ -11,7 +11,7 @@
 #region Designer generated code
 #pragma warning disable
 using Reqnroll;
-namespace CleanShortener.BDD.Demo.Features
+namespace CleanShortener.BDD.Demo.TechTalk
 {
     
     
@@ -24,7 +24,7 @@ namespace CleanShortener.BDD.Demo.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("pt-BR"), "Features", "Deleção de URLs encurtadas", "\tSendo um usuário do sistema\r\n\tEu quero verificar que o sistema deleta corretamen" +
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("pt-BR"), "TechTalk", "Deleção de URLs encurtadas", "\tSendo um usuário do sistema\r\n\tEu quero verificar que o sistema deleta corretamen" +
                 "te uma URL\r\n\tDe forma que satisfaça os meus requisitos de negócio", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
@@ -106,7 +106,7 @@ namespace CleanShortener.BDD.Demo.Features
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Features/ExemploEmPortugues.feature.ndjson", 3);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("TechTalk/ExemploEmPortugues.feature.ndjson", 3);
         }
         
         async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
