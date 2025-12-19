@@ -29,6 +29,6 @@ public class AuthenticationHook(ScenarioContext scenarioContext,
 
         var response = await _testContext.HttpClient.PostAsync<LoginRequest, AccessTokenResponse>(_testContext.ServiceUrls.LoginEndpoint, request);
 
-        _testContext.ServiceToken = response;
+        _scenarioContext[ContextKeys.AccessTokenResponse] = response.ParsedResponseBody;
     }
 }
