@@ -28,6 +28,8 @@ public class UrlShortenerController : ControllerBase
     [ProducesResponseType(type: typeof(ValidationErrors), statusCode: (int)HttpStatusCode.NotFound, contentType: "application/json")]
     public async Task<IActionResult> Create([FromBody] ShortUrlRequest urlRequest)
     {
+        _requests.Add(1);
+
         var createUrlResult = await _urlShortenerHandler.CreateShortUrlAsync(urlRequest);
 
         if (!createUrlResult.IsSuccess)
@@ -37,7 +39,6 @@ public class UrlShortenerController : ControllerBase
 
         var response = createUrlResult.Entity;
 
-        _requests.Add(1);
 
         return Created(response!.ShortUrl, response);
     }
@@ -47,13 +48,26 @@ public class UrlShortenerController : ControllerBase
     [ProducesResponseType((int)HttpStatusCode.NotFound)]
     public async Task<IActionResult> GoToUrl([FromRoute] string shortUrlId)
     {
+        _requests.Add(1);
+
         var destinationUrl = await _urlShortenerHandler.GetShortenedUrlByIdAsync(shortUrlId);
 
         if (destinationUrl == null)
             return NotFound();
 
-        _requests.Add(1);
 
         return Redirect(destinationUrl.OriginalUrl);
+    }
+
+    [HttpDelete("/{shortUrlId}")]
+    [ProducesResponseType((int)HttpStatusCode.NoContent)]
+    [ProducesResponseType((int)HttpStatusCode.NotFound)]
+    public async Task<IActionResult> Delete([FromRoute] string shortUrlId)
+    {
+        _requests.Add(1);
+
+        await _urlShortenerHandler.DeleteByIdAsync(shortUrlId);
+
+        return NoContent();
     }
 }

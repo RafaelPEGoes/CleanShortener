@@ -13,7 +13,7 @@ public class ShortenedUrlRepository(CleanShortenerDbContext database) : IShorten
     {
         await _database.ShortUrls.AddAsync(url);
 
-        var isSaved = await _database.SaveChangesAsync();
+        await _database.SaveChangesAsync();
 
         return url;
     }
@@ -26,5 +26,12 @@ public class ShortenedUrlRepository(CleanShortenerDbContext database) : IShorten
     public async Task<ShortUrl> GetShortenedUrlByIdAsync(string shortUrlId)
     {
         return await _database.ShortUrls.FirstOrDefaultAsync(u => u.ShortenedUrl == shortUrlId);
+    }
+
+    public async Task DeleteAsync(ShortUrl shortUrl)
+    {
+        _database.Entry(shortUrl).State = EntityState.Deleted;
+
+        await _database.SaveChangesAsync();
     }
 }

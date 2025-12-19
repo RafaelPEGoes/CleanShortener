@@ -19,6 +19,14 @@ public class ShortenedUrlDataProxy : IShortenedUrlDataProxy
         _repository = repository;
     }
 
+    public async Task DeleteAsync(ShortUrl shortUrl)
+    {
+        _cache.Remove(shortUrl);
+        _cache.Remove(shortUrl.ShortenedUrl);
+
+        await _repository.DeleteAsync(shortUrl);
+    }
+
     public async Task<ShortUrl> GetByDestinationUrlAsync(string destination)
     {
         if (_cache.TryGetValue<ShortUrl>(destination, out var shortenedUrl) && shortenedUrl is not null)

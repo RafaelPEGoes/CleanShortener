@@ -1,6 +1,13 @@
 ﻿namespace CleanShortener.BDD.Demo;
-public class ContextKeys
+public static class ContextKeys
 {
-    public const string Url = "Url";
-    public const string CreatedResponse = "CreatedResponse";
+    #region Url
+    public const string LongUrl = "LongUrl";
+    public const string OriginalUrl = "OriginalUrl";
+    #endregion
+
+    #region Response Keys
+    public const string CreateShortUrlResponse = "CreateShortUrlResponse";
+    public const string AccessTokenResponse = "AccessTokenResponse";
+    #endregion
 }

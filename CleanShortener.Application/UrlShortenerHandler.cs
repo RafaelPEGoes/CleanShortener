@@ -34,6 +34,20 @@ public class UrlShortenerHandler : IUrlShortenerHandler
         return result.Transform<ShortUrl, ShortUrlResponse>(new ShortUrlResponse(result.Entity!));
     }
 
+    public async Task DeleteByIdAsync(string shortUrlId)
+    {
+        var internalUrl = _configuration["BaseUrl"]!;
+
+        var fullShortenedUrl = $"{internalUrl}/{shortUrlId}";
+
+        var persistedUrl = await _urlDataProxy.GetShortenedUrlByIdAsync(fullShortenedUrl);
+
+        if (persistedUrl is null)
+            return;
+
+        await _urlDataProxy.DeleteAsync(persistedUrl);
+    }
+
     public async Task<ShortUrlResponse> GetShortenedUrlAsync(ShortUrlRequest shortUrlRequest)
     {
         var persistedUrl = await _urlDataProxy.GetByDestinationUrlAsync(shortUrlRequest.Url);

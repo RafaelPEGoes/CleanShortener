@@ -11,28 +11,28 @@
 #region Designer generated code
 #pragma warning disable
 using Reqnroll;
-namespace CleanShortener.BDD.Demo.CreateShortUrl
+namespace CleanShortener.BDD.Demo.TechTalk
 {
     
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CreateShortUrlFeature : object, global::Xunit.IClassFixture<CreateShortUrlFeature.FixtureData>, global::Xunit.IAsyncLifetime
+    public partial class _3_BackgroundsFeature : object, global::Xunit.IClassFixture<_3_BackgroundsFeature.FixtureData>, global::Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "CreateShortUrl", "Create Short Url", "As an user of CleanShortener\r\nI want the capability of get shorter versions of re" +
-                "gular urls\r\nSo I comply with internal business requirements and constraints", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "TechTalk", "3 - Backgrounds", "As an engineer\r\nI want to show how to use Backgrounds\r\nSo that the common pre-con" +
+                "ditions are abstracted away from the specification", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "CreateShortUrl.feature"
+#line 1 "3 - Backgrounds.feature"
 #line hidden
         
-        public CreateShortUrlFeature(CreateShortUrlFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public _3_BackgroundsFeature(_3_BackgroundsFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -104,9 +104,24 @@ namespace CleanShortener.BDD.Demo.CreateShortUrl
             await testRunner.CollectScenarioErrorsAsync();
         }
         
+        public virtual async global::System.Threading.Tasks.Task FeatureBackgroundAsync()
+        {
+#line 7
+#line hidden
+#line 8
+ await testRunner.GivenAsync("the url \"https://www.google.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 9
+ await testRunner.WhenAsync("I request a shortened url", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 10
+ await testRunner.ThenAsync("I receive a shortened url in response", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+        }
+        
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("CreateShortUrl/CreateShortUrl.feature.ndjson", 3);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("TechTalk/3 - Backgrounds.feature.ndjson", 3);
         }
         
         async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
@@ -134,20 +149,20 @@ namespace CleanShortener.BDD.Demo.CreateShortUrl
             await this.TestTearDownAsync();
         }
         
-        [global::Xunit.SkippableFactAttribute(DisplayName="A long url is reduced to a smaller one")]
-        [global::Xunit.TraitAttribute("FeatureTitle", "Create Short Url")]
-        [global::Xunit.TraitAttribute("Description", "A long url is reduced to a smaller one")]
-        [global::Xunit.TraitAttribute("Category", "tag1")]
-        public async global::System.Threading.Tasks.Task ALongUrlIsReducedToASmallerOne()
+        [global::Xunit.SkippableFactAttribute(DisplayName="Shortened url should redirect user to the original url")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "3 - Backgrounds")]
+        [global::Xunit.TraitAttribute("Description", "Shortened url should redirect user to the original url")]
+        [global::Xunit.TraitAttribute("Category", "CreateShortUrl")]
+        public async global::System.Threading.Tasks.Task ShortenedUrlShouldRedirectUserToTheOriginalUrl()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "CreateShortUrl"};
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A long url is reduced to a smaller one", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Shortened url should redirect user to the original url", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 8
+#line 13
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -157,14 +172,17 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 9
- await testRunner.GivenAsync("the url \"https://www.google.com/search?q=how+to+bdd\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line 7
+await this.FeatureBackgroundAsync();
 #line hidden
-#line 10
- await testRunner.WhenAsync("I request a shortened url", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 14
+ await testRunner.GivenAsync("the shortened url bound to \"https://www.google.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-#line 11
- await testRunner.ThenAsync("I receive a shortened url in response", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line 15
+ await testRunner.WhenAsync("I open the shortened url", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 16
+ await testRunner.ThenAsync("I should be redirected to the original url", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -177,12 +195,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await CreateShortUrlFeature.FeatureSetupAsync();
+                await _3_BackgroundsFeature.FeatureSetupAsync();
             }
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await CreateShortUrlFeature.FeatureTearDownAsync();
+                await _3_BackgroundsFeature.FeatureTearDownAsync();
             }
         }
     }

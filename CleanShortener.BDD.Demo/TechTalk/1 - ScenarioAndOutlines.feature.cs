@@ -11,28 +11,28 @@
 #region Designer generated code
 #pragma warning disable
 using Reqnroll;
-namespace CleanShortener.BDD.Demo.CreateShortUrl
+namespace CleanShortener.BDD.Demo.TechTalk
 {
     
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CreateShortUrlFeature : object, global::Xunit.IClassFixture<CreateShortUrlFeature.FixtureData>, global::Xunit.IAsyncLifetime
+    public partial class _1_ScenarioAndOutlinesFeature : object, global::Xunit.IClassFixture<_1_ScenarioAndOutlinesFeature.FixtureData>, global::Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "CreateShortUrl", "Create Short Url", "As an user of CleanShortener\r\nI want the capability of get shorter versions of re" +
-                "gular urls\r\nSo I comply with internal business requirements and constraints", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "TechTalk", "1 - ScenarioAndOutlines", "As an engineer\r\nI want to demonstrate what are Scenarios and ScenarioOutlines\r\nSo" +
+                " the tech talk participants get to know when to use each", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "CreateShortUrl.feature"
+#line 1 "1 - ScenarioAndOutlines.feature"
 #line hidden
         
-        public CreateShortUrlFeature(CreateShortUrlFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public _1_ScenarioAndOutlinesFeature(_1_ScenarioAndOutlinesFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -106,7 +106,7 @@ namespace CleanShortener.BDD.Demo.CreateShortUrl
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("CreateShortUrl/CreateShortUrl.feature.ndjson", 3);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("TechTalk/1 - ScenarioAndOutlines.feature.ndjson", 6);
         }
         
         async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
@@ -134,17 +134,19 @@ namespace CleanShortener.BDD.Demo.CreateShortUrl
             await this.TestTearDownAsync();
         }
         
-        [global::Xunit.SkippableFactAttribute(DisplayName="A long url is reduced to a smaller one")]
-        [global::Xunit.TraitAttribute("FeatureTitle", "Create Short Url")]
-        [global::Xunit.TraitAttribute("Description", "A long url is reduced to a smaller one")]
-        [global::Xunit.TraitAttribute("Category", "tag1")]
-        public async global::System.Threading.Tasks.Task ALongUrlIsReducedToASmallerOne()
+        [global::Xunit.SkippableFactAttribute(DisplayName="This is a Scenario to create a short url")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "1 - ScenarioAndOutlines")]
+        [global::Xunit.TraitAttribute("Description", "This is a Scenario to create a short url")]
+        [global::Xunit.TraitAttribute("Category", "Scenario")]
+        [global::Xunit.TraitAttribute("Category", "SingleTest")]
+        public async global::System.Threading.Tasks.Task ThisIsAScenarioToCreateAShortUrl()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "Scenario",
+                    "SingleTest"};
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A long url is reduced to a smaller one", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("This is a Scenario to create a short url", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 8
@@ -158,12 +160,61 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 9
- await testRunner.GivenAsync("the url \"https://www.google.com/search?q=how+to+bdd\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("the url \"https://www.google.com/search?q=scenario+vs+scenario+outline+reqnroll\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 10
  await testRunner.WhenAsync("I request a shortened url", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
 #line hidden
 #line 11
+ await testRunner.ThenAsync("I receive a shortened url in response", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Xunit.SkippableTheoryAttribute(DisplayName="Any url is accepted as long as its HTTP and HTTPS")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "1 - ScenarioAndOutlines")]
+        [global::Xunit.TraitAttribute("Description", "Any url is accepted as long as its HTTP and HTTPS")]
+        [global::Xunit.TraitAttribute("Category", "ScenarioOutline")]
+        [global::Xunit.TraitAttribute("Category", "MultipleTests")]
+        [global::Xunit.TraitAttribute("Category", "ParameterizedTests")]
+        [global::Xunit.InlineDataAttribute("https://www.google.com/search?q=scenario+vs+scenario+outline+reqnroll", "1", new string[0])]
+        [global::Xunit.InlineDataAttribute("http://salem.lib.virginia.edu", "2", new string[0])]
+        [global::Xunit.InlineDataAttribute("http://dinosaurs.conspiracy-theories.com", "3", new string[0])]
+        public async global::System.Threading.Tasks.Task AnyUrlIsAcceptedAsLongAsItsHTTPAndHTTPS(string url, string @__pickleIndex, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "ScenarioOutline",
+                    "MultipleTests",
+                    "ParameterizedTests"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("Url", url);
+            string pickleIndex = @__pickleIndex;
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Any url is accepted as long as its HTTP and HTTPS", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 14
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 15
+ await testRunner.GivenAsync(string.Format("the url \"{0}\"", url), ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 16
+ await testRunner.WhenAsync("I open the shortened url", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 17
  await testRunner.ThenAsync("I receive a shortened url in response", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
@@ -177,12 +228,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await CreateShortUrlFeature.FeatureSetupAsync();
+                await _1_ScenarioAndOutlinesFeature.FeatureSetupAsync();
             }
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await CreateShortUrlFeature.FeatureTearDownAsync();
+                await _1_ScenarioAndOutlinesFeature.FeatureTearDownAsync();
             }
         }
     }

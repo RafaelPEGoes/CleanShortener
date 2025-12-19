@@ -10,4 +10,6 @@ public interface IUrlShortenerHandler
     public Task<ShortUrlResponse> GetShortenedUrlAsync(ShortUrlRequest shortUrlRequest);
 
     public Task<ShortUrlResponse> GetShortenedUrlByIdAsync(string shortUrlId);
+
+    public Task DeleteByIdAsync(string shortUrlId);
 }

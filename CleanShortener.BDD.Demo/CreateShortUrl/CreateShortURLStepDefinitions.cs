@@ -1,42 +1,53 @@
 using CleanShortener.Application;
 using Reqnroll;
-using System.Text.Json;
-using System.Text;
 using CleanShortener.BDD.Demo.Configuration;
 
-namespace CleanShortener.BDD.Demo.CreateUrl;
+namespace CleanShortener.BDD.Demo.CreateShortUrl;
 
 [Binding]
-internal class CreateShortURLStepDefinitions(ScenarioContext scenarioContext, ApiTestContext apiTestContext)
+public class CreateShortUrlStepDefinitions(ScenarioContext scenarioContext,
+    ITestContext testContext)
 {
     private readonly ScenarioContext _scenarioContext = scenarioContext;
-    private readonly ApiTestContext _apiContext = apiTestContext;
+    private readonly ITestContext _testContext = testContext;
 
     [Given("the url {string}")]
+    [Given("a url {string}")]
     public void GivenTheUrl(string url)
     {
-        _scenarioContext[ContextKeys.Url] = url;
+        _scenarioContext[ContextKeys.LongUrl] = url;
     }
 
-    [When("I request a shortened URL")]
+    [When("I request a shortened url")]
+    [When("eu solicito uma url encurtada")]
     public async Task WhenIRequestAShortenedURLAsync()
     {
-        var request = new ShortUrlRequest() { Url = (string)_scenarioContext[ContextKeys.Url] };
-        var httpContent = new StringContent(JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
+        var longUrl = _scenarioContext.Get<string>(ContextKeys.LongUrl);
 
-        var response = await _apiContext.HttpClient.PostAsync("http://localhost:7777/create", httpContent);
-
-        if (response is not null)
+        var createShortUrlRequest = new ShortUrlRequest()
         {
-            var contentString = await response.Content.ReadAsStringAsync();
-            var shortUrlResponse = JsonSerializer.Deserialize<ShortUrlResponse>(contentString);
-            //_scenarioContext[ContextKeys.CreatedResponse] = shortUrlResponse;
-        }
+            Url = longUrl,
+        };
+
+        var createUrlEndpoint = _testContext.ServiceUrls.CreateShortUrl;
+        var createUrlResponse = await _testContext.HttpClient.PostAsync<ShortUrlRequest, ShortUrlResponse>(createUrlEndpoint, createShortUrlRequest);
+
+        Assert.NotNull(createUrlEndpoint);
+
+        _scenarioContext[ContextKeys.CreateShortUrlResponse] = createUrlResponse;
     }
 
-    [Then("[outcome]")]
-    public void ThenOutcome()
+    [Then("I receive a shortened url in response")]
+    [Then("eu recebo uma url encurtada de volta")]
+    public void IReceiveAShortenedUrlInResponse()
     {
-        throw new PendingStepException();
+        var createUrlResponse = _scenarioContext.Get<ApiResponse<ShortUrlResponse>>(ContextKeys.CreateShortUrlResponse);
+
+        Assert.Equal(201, (int)createUrlResponse.HttpResponse.StatusCode);
+
+        var parsedResponse = createUrlResponse.ParsedResponseBody;
+        var originalUrl = _scenarioContext.Get<string>(ContextKeys.LongUrl);
+
+        Assert.NotEqual(parsedResponse.ShortUrl, originalUrl);
     }
 }
