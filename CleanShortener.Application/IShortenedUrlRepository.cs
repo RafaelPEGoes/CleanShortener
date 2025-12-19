@@ -9,4 +9,6 @@ public interface IShortenedUrlRepository
     public Task<ShortUrl> SaveAsync(ShortUrl url);
 
     public Task<ShortUrl> GetShortenedUrlByIdAsync(string shortUrlId);
+
+    public Task DeleteAsync(ShortUrl shortUrl);
 }
