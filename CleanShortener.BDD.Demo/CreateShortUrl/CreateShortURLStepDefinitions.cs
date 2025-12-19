@@ -12,12 +12,14 @@ public class CreateShortUrlStepDefinitions(ScenarioContext scenarioContext,
     private readonly ITestContext _testContext = testContext;
 
     [Given("the url {string}")]
+    [Given("a url {string}")]
     public void GivenTheUrl(string url)
     {
         _scenarioContext[ContextKeys.LongUrl] = url;
     }
 
     [When("I request a shortened url")]
+    [When("eu solicito uma url encurtada")]
     public async Task WhenIRequestAShortenedURLAsync()
     {
         var longUrl = _scenarioContext.Get<string>(ContextKeys.LongUrl);
@@ -36,6 +38,7 @@ public class CreateShortUrlStepDefinitions(ScenarioContext scenarioContext,
     }
 
     [Then("I receive a shortened url in response")]
+    [Then("eu recebo uma url encurtada de volta")]
     public void IReceiveAShortenedUrlInResponse()
     {
         var createUrlResponse = _scenarioContext.Get<ApiResponse<ShortUrlResponse>>(ContextKeys.CreateShortUrlResponse);
