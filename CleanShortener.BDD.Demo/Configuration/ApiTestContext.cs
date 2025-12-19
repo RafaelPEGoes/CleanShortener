@@ -1,6 +1,6 @@
 ﻿namespace CleanShortener.BDD.Demo.Configuration;
 
-internal class ApiTestContext : IDisposable
+public class ApiTestContext : IDisposable
 {
     public ApiFactory ApiFactory { get; set; }
     public HttpClient HttpClient { get; init; }
@@ -14,5 +14,6 @@ internal class ApiTestContext : IDisposable
     {
         ApiFactory.Dispose();
         HttpClient.Dispose();
+        GC.SuppressFinalize(this);
     }
 }
