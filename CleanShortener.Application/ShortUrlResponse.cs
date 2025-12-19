@@ -8,6 +8,11 @@ public class ShortUrlResponse
 
     public string ShortUrl { get; set; }
 
+    public ShortUrlResponse()
+    {
+
+    }
+
     public ShortUrlResponse(ShortUrl shortUrl)
     {
         OriginalUrl = shortUrl.OriginalUrl;
