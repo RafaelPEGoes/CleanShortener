@@ -134,17 +134,17 @@ namespace CleanShortener.BDD.Demo.CreateShortUrl
             await this.TestTearDownAsync();
         }
         
-        [global::Xunit.SkippableFactAttribute(DisplayName="Shortened url redirects to another address when accessed")]
+        [global::Xunit.SkippableFactAttribute(DisplayName="A long url is reduced to a smaller one")]
         [global::Xunit.TraitAttribute("FeatureTitle", "Create Short Url")]
-        [global::Xunit.TraitAttribute("Description", "Shortened url redirects to another address when accessed")]
+        [global::Xunit.TraitAttribute("Description", "A long url is reduced to a smaller one")]
         [global::Xunit.TraitAttribute("Category", "tag1")]
-        public async global::System.Threading.Tasks.Task ShortenedUrlRedirectsToAnotherAddressWhenAccessed()
+        public async global::System.Threading.Tasks.Task ALongUrlIsReducedToASmallerOne()
         {
             string[] tagsOfScenario = new string[] {
                     "tag1"};
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Shortened url redirects to another address when accessed", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("A long url is reduced to a smaller one", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 8
@@ -158,7 +158,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 9
- await testRunner.GivenAsync("the url \"https://www.google.com\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+ await testRunner.GivenAsync("the url \"https://www.google.com/search?q=how+to+bdd\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 10
  await testRunner.WhenAsync("I request a shortened url", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
