@@ -1,4 +1,6 @@
-﻿namespace CleanShortener.BDD.Demo.Helpers;
+﻿using Microsoft.AspNetCore.Identity.Data;
+
+namespace CleanShortener.BDD.Demo.Helpers;
 
 public interface IHttpClientHelper
 {
