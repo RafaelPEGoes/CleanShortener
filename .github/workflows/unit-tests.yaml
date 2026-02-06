@@ -1,6 +1,6 @@
 name: Unit Tests
 
-run-name: Unit Tests for ${{ github.ref }}
+run-name: Unit Tests for ${{ github.ref_name }}
 on:
   push:
     branches:
