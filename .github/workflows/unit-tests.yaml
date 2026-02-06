@@ -23,6 +23,6 @@ jobs:
           cache: true
 
       - name: Restore Dependencies
-        run: dotnet restore /p:RestorePackagesWithLockFile=true
+        run: dotnet restore --locked-mode
       - name: Build Solution
         run: dotnet build CleanShortener.sln --no-restore --configuration Release
