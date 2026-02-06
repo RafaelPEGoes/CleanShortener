@@ -4,9 +4,11 @@ using CleanShortener.Domain;
 
 public interface IShortenedUrlRepository
 {
-    public ShortUrl GetByDestinationUrl(string destination);
+    public Task<ShortUrl> GetByDestinationUrlAsync(string destination);
 
-    public ShortUrl Save(ShortUrl url);
+    public Task<ShortUrl> SaveAsync(ShortUrl url);
 
-    public ShortUrl GetShortenedUrlById(string shortUrlId);
+    public Task<ShortUrl> GetShortenedUrlByIdAsync(string shortUrlId);
+
+    public Task DeleteAsync(ShortUrl shortUrl);
 }

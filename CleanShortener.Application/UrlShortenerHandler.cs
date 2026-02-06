@@ -1,50 +1,74 @@
 ﻿using CleanShortener.Domain;
+using CleanShortener.Domain.ValueObjects;
+using Microsoft.Extensions.Configuration;
 
 namespace CleanShortener.Application;
 
 public class UrlShortenerHandler : IUrlShortenerHandler
 {
     private readonly IShortenedUrlDataProxy _urlDataProxy;
+    private readonly IConfiguration _configuration;
 
-    public UrlShortenerHandler(IShortenedUrlDataProxy urlDataRepository)
+    public UrlShortenerHandler(IShortenedUrlDataProxy urlDataRepository, IConfiguration configuration)
     {
         _urlDataProxy = urlDataRepository;
+        _configuration = configuration;
     }
 
-    public Result<ShortUrlDto, ValidationErrors> CreateShortUrl(ShortUrlDto shortUrlDto)
+    public async Task<Either<ShortUrlResponse, ValidationErrors>> CreateShortUrlAsync(ShortUrlRequest shortUrlRequest)
     {
-        // TODO: normalize URL, verify if it is reachable using a Specification, make it async etc...
-        var validationResult = ShortUrl.Validate(shortUrlDto.OriginalUrl);
+        var internalUrl = _configuration["BaseUrl"]!;
 
-        if (validationResult.HasErrors)
-            return Result<ShortUrlDto, ValidationErrors>.Build(validationResult);
+        var persistedUrl = await GetShortenedUrlAsync(shortUrlRequest);
 
-        var persistedUrl = GetShortenedUrl(shortUrlDto);
-        
         if (persistedUrl is not null)
-            return Result<ShortUrlDto, ValidationErrors>.Build(persistedUrl);
+            return Either<ShortUrlResponse, ValidationErrors>.Of(persistedUrl);
 
-        var shortUrl = new ShortUrl(shortUrlDto.OriginalUrl);
+        var result = ShortUrl.TryCreate(shortUrlRequest.Url, internalUrl);
 
-        _urlDataProxy.Save(shortUrl);
+        if (result.IsFailure)
+            return result.Transform<ShortUrl, ShortUrlResponse>(result.ValidationErrors!);
 
-        shortUrlDto.ShortenedUrl = shortUrl.ShortenedUrl;
+        await _urlDataProxy.SaveAsync(result.Entity!);
 
-        return Result<ShortUrlDto, ValidationErrors>.Build(shortUrlDto);
+        return result.Transform<ShortUrl, ShortUrlResponse>(new ShortUrlResponse(result.Entity!));
     }
 
-    public ShortUrlDto GetShortenedUrl(ShortUrlDto shortUrlDto)
+    public async Task DeleteByIdAsync(string shortUrlId)
     {
-        var persistedUrl = _urlDataProxy.GetByDestinationUrl(shortUrlDto.OriginalUrl);
+        var internalUrl = _configuration["BaseUrl"]!;
 
-        return persistedUrl.ToShortUrlDto();
+        var fullShortenedUrl = $"{internalUrl}/{shortUrlId}";
+
+        var persistedUrl = await _urlDataProxy.GetShortenedUrlByIdAsync(fullShortenedUrl);
+
+        if (persistedUrl is null)
+            return;
+
+        await _urlDataProxy.DeleteAsync(persistedUrl);
     }
 
-    public ShortUrlDto GetShortenedUrlById(string shortUrlId)
+    public async Task<ShortUrlResponse> GetShortenedUrlAsync(ShortUrlRequest shortUrlRequest)
     {
-        // convert cache to ValueTask, it will most likely be completed syncronously 
-        var persistedUrl = _urlDataProxy.GetShortenedUrlById(shortUrlId);
+        var persistedUrl = await _urlDataProxy.GetByDestinationUrlAsync(shortUrlRequest.Url);
 
-        return persistedUrl.ToShortUrlDto();
+        if (persistedUrl is null)
+            return null!;
+
+        return new ShortUrlResponse(persistedUrl);
+    }
+
+    public async Task<ShortUrlResponse> GetShortenedUrlByIdAsync(string shortUrlId)
+    {
+        var internalUrl = _configuration["BaseUrl"]!;
+
+        var fullShortenedUrl = $"{internalUrl}/{shortUrlId}";
+
+        var persistedUrl = await _urlDataProxy.GetShortenedUrlByIdAsync(fullShortenedUrl);
+
+        if (persistedUrl is null)
+            return null!;
+
+        return new ShortUrlResponse(persistedUrl);
     }
 }

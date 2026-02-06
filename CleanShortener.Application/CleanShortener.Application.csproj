@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UrlShortener\**" />
+    <EmbeddedResource Remove="UrlShortener\**" />
+    <None Remove="UrlShortener\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CleanShortener.Domain\CleanShortener.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UrlShortener\" />
+    <PackageReference Include="OpenTelemetry" Version="1.14.0" />
+    <PackageReference Include="OpenTelemetry.Api.ProviderBuilderExtensions" Version="1.14.0" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
   </ItemGroup>
 
 </Project>

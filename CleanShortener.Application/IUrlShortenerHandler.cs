@@ -1,12 +1,15 @@
 ﻿using CleanShortener.Domain;
+using CleanShortener.Domain.ValueObjects;
 
 namespace CleanShortener.Application;
 
 public interface IUrlShortenerHandler
 {
-    public Result<ShortUrlDto, ValidationErrors> CreateShortUrl(ShortUrlDto shortUrlRequest);
+    public Task<Either<ShortUrlResponse, ValidationErrors>> CreateShortUrlAsync(ShortUrlRequest shortUrlRequest);
 
-    public ShortUrlDto GetShortenedUrl(ShortUrlDto shortUrlDto);
+    public Task<ShortUrlResponse> GetShortenedUrlAsync(ShortUrlRequest shortUrlRequest);
 
-    public ShortUrlDto GetShortenedUrlById(string shortUrlId);
+    public Task<ShortUrlResponse> GetShortenedUrlByIdAsync(string shortUrlId);
+
+    public Task DeleteByIdAsync(string shortUrlId);
 }
