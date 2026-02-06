@@ -178,9 +178,9 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
         [global::Xunit.TraitAttribute("Category", "ScenarioOutline")]
         [global::Xunit.TraitAttribute("Category", "MultipleTests")]
         [global::Xunit.TraitAttribute("Category", "ParameterizedTests")]
-        [global::Xunit.InlineDataAttribute("https://www.google.com/search?q=scenario+vs+scenario+outline+reqnroll", "1", new string[0])]
-        [global::Xunit.InlineDataAttribute("http://salem.lib.virginia.edu", "2", new string[0])]
-        [global::Xunit.InlineDataAttribute("http://dinosaurs.conspiracy-theories.com", "3", new string[0])]
+        [global::Xunit.InlineDataAttribute("http://dinosaurs.conspiracy-theories.com", "1", new string[0])]
+        [global::Xunit.InlineDataAttribute("https://www.google.com/search?q=scenario+vs+scenario+outline+reqnroll", "2", new string[0])]
+        [global::Xunit.InlineDataAttribute("http://salem.lib.virginia.edu", "3", new string[0])]
         public async global::System.Threading.Tasks.Task AnyUrlIsAcceptedAsLongAsItsHTTPAndHTTPS(string url, string @__pickleIndex, string[] exampleTags)
         {
             string[] @__tags = new string[] {
