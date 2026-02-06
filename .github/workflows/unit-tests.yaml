@@ -24,4 +24,4 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore --locked-mode
       - name: Build Solution
-        run: dotnet build --no-restore --configuration Release
+        run: dotnet build CleanShortener.sln --no-restore --configuration Release
