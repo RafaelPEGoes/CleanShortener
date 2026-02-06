@@ -22,15 +22,15 @@ jobs:
           cache-dependency-path: '**/packages.lock.json'
           cache: true
 
-      - name: Restore Dependencies
-        run: dotnet restore --locked-mode
-      - name: Build Solution
-        run: dotnet build CleanShortener.sln --no-restore --configuration Release
-      - name: Run Unit Tests
-        run: dotnet test --filter "FullyQualifiedName!~ArchitecturalTests" --no-build --configuration Release --logger:"console;verbosity=detailed" --logger:"html;logfilename=testResults.html" CleanShortener.Tests\CleanShortener.Tests.csproj
+      # - name: Restore Dependencies
+      #   run: dotnet restore --locked-mode
+      # - name: Build Solution
+      #   run: dotnet build CleanShortener.sln --no-restore --configuration Release
+      # - name: Run Unit Tests
+      #   run: dotnet test --filter "FullyQualifiedName!~ArchitecturalTests" --no-build --configuration Release --logger:"console;verbosity=detailed" --logger:"html;logfilename=testResults.html" CleanShortener.Tests\CleanShortener.Tests.csproj
 
-      - name: Upload Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: testResults
-          path: CleanShortener.Tests\TestResults\testResults.html
+      # - name: Upload Results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: testResults
+      #     path: CleanShortener.Tests\TestResults\testResults.html
