@@ -8,5 +8,5 @@ public interface IShortenedUrlRepository
 
     public ShortUrl Save(ShortUrl url);
 
-    public ShortUrl GetShortenedUrlById(string shortUrlId)
+    public ShortUrl GetShortenedUrlById(string shortUrlId);
 }
