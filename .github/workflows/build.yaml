@@ -12,7 +12,8 @@ on:
       - main
 
 env:
-  BASE_PUBLISH_FOLDER: release
+  PUBLISH_FOLDER: release
+  MAIN_APPLICATION_PATH: CleanShortener/CleanShortener.csproj
 
 jobs:
   build:
@@ -41,12 +42,12 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore --locked-mode
 
-      - name: Publish project ${{ matrix.name }}
+      - name: Publish project
         run: |
-          dotnet publish ${{ matrix.project }} -c Release -o "$BASE_PUBLISH_FOLDER/${{ matrix.name }}" --no-restore
+          dotnet publish $MAIN_APPLICATION_PATH -c Release -o "$PUBLISH_FOLDER" --no-restore
 
-      - name: Upload artifact for ${{ matrix.name }}
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.name }}
-          path: ${{ env.BASE_PUBLISH_FOLDER }}/${{ matrix.name }}
+          name: CleanShortener
+          path: env.PUBLISH_FOLDER
