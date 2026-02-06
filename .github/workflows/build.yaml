@@ -32,7 +32,7 @@ jobs:
         run: dotnet restore --locked-mode
 
       - name: Build Solution
-        run: dotnet publish -c Release -o $PUBLISH_FOLDER CleanShortener.sln --no-restore
+        run: dotnet publish CleanShortener.sln -c Release -o $PUBLISH_FOLDER --no-restore
 
       - name: Publish Artifacts
         uses: actions/upload-artifact@v4
