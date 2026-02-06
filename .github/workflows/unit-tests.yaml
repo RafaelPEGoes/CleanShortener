@@ -19,9 +19,10 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
+          cache-dependency-path: '**/packages.lock.json'
           cache: true
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore /p:RestorePackagesWithLockFile=true
       - name: Build Solution
         run: dotnet build CleanShortener.sln --no-restore --configuration Release
