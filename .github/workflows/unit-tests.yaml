@@ -6,7 +6,7 @@ on:
     workflows:
     - Build
     types:
-      - completed
+    - completed
 
 jobs:
   test:
