@@ -4,7 +4,7 @@ run-name: Unit Tests for ${{ github.ref_name }}
 on:
   workflow_run:
     workflows:
-    - Build
+    - build
     types:
     - completed
 
