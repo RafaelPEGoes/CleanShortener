@@ -24,7 +24,7 @@ jobs:
           - name: MainProject
             project: CleanShortener/CleanShortener.csproj
           - name: UnitTestsProject
-            project: CleanShortener.UnitTests/CleanShortener.UnitTests.csproj
+            project: CleanShortener.Tests/CleanShortener.Tests.csproj
           - name: BDDProject
             project: CleanShortener.BDD.Demo/CleanShortener.BDD.Demo.csproj
 
