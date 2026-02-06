@@ -7,6 +7,10 @@ on:
     branches:
       - main
       - 'release/*'
+  pull_request:
+    branches:
+      - main
+
   workflow_call:
     outputs:
       release_path:
