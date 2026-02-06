@@ -1,0 +1,36 @@
+name: Unit Tests
+
+run-name: Unit Tests for ${{ github.ref_name }}
+on:
+  push:
+    branches:
+      - main
+      - 'release/*'
+
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+          cache-dependency-path: '**/packages.lock.json'
+          cache: true
+
+      - name: Restore Dependencies
+        run: dotnet restore --locked-mode
+      - name: Build Solution
+        run: dotnet build CleanShortener.sln --no-restore --configuration Release
+      - name: Run Unit Tests
+        run: dotnet test --filter "FullyQualifiedName!~ArchitecturalTests" --no-build --configuration Release --logger:"console;verbosity=detailed" --logger:"html;logfilename=testResults.html" CleanShortener.Tests\CleanShortener.Tests.csproj
+
+      - name: Upload Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: testResults
+          path: CleanShortener.Tests\TestResults\testResults.html
