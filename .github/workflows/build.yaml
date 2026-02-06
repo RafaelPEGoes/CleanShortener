@@ -19,16 +19,6 @@ jobs:
   build:
     runs-on: windows-latest
 
-    strategy:
-      matrix:
-        include:
-          - name: MainProject
-            project: CleanShortener/CleanShortener.csproj
-          - name: UnitTestsProject
-            project: CleanShortener.Tests/CleanShortener.Tests.csproj
-          - name: BDDProject
-            project: CleanShortener.BDD.Demo/CleanShortener.BDD.Demo.csproj
-
     steps:
       - uses: actions/checkout@v5
 
