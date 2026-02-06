@@ -12,11 +12,21 @@ on:
       - main
 
 env:
-  PUBLISH_FOLDER: release
+  BASE_PUBLISH_FOLDER: release
 
 jobs:
   build:
     runs-on: windows-latest
+
+    strategy:
+      matrix:
+        include:
+          - name: MainProject
+            project: CleanShortener/CleanShortener.csproj
+          - name: UnitTestsProject
+            project: CleanShortener.UnitTests/CleanShortener.UnitTests.csproj
+          - name: BDDProject
+            project: CleanShortener.BDD.Demo/CleanShortener.BDD.Demo.csproj
 
     steps:
       - uses: actions/checkout@v5
@@ -31,11 +41,12 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore --locked-mode
 
-      - name: Build Solution
-        run: dotnet publish CleanShortener.sln -c Release -o $PUBLISH_FOLDER --no-restore
+      - name: Publish project ${{ matrix.name }}
+        run: |
+          dotnet publish ${{ matrix.project }} -c Release -o "$BASE_PUBLISH_FOLDER/${{ matrix.name }}" --no-restore
 
-      - name: Publish Artifacts
+      - name: Upload artifact for ${{ matrix.name }}
         uses: actions/upload-artifact@v4
         with:
-          name: application
-          path: $PUBLISH_FOLDER/
+          name: ${{ matrix.name }}
+          path: ${{ env.BASE_PUBLISH_FOLDER }}/${{ matrix.name }}
