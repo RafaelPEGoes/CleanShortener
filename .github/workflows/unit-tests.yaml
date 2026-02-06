@@ -27,7 +27,7 @@ jobs:
       - name: Build Solution
         run: dotnet build CleanShortener.sln --no-restore --configuration Release
       - name: Run Unit Tests
-        run: dotnet test --no-build --logger:"console;verbosity:detailed" --logger:"html;logfilename=testResults.html" CleanShortener.Tests\CleanShortener.Tests.csproj
+        run: dotnet test --no-build --logger:"console;verbosity=detailed" --logger:"html;logfilename=testResults.html" CleanShortener.Tests\CleanShortener.Tests.csproj
 
       - name: Upload Results
         uses: actions/upload-artifact@v4
