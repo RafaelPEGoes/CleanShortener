@@ -2,14 +2,12 @@ name: Unit Tests
 
 run-name: Unit Tests for ${{ github.ref_name }}
 on:
-  push:
-    branches:
-      - main
-      - 'release/*'
+  workflow_run:
+    workflows:
+    - Build
+    types:
+      - completed
 
-  pull_request:
-    branches:
-      - main
 jobs:
   build:
     runs-on: windows-latest
