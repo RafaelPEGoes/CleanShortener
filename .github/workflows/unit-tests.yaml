@@ -1,0 +1,21 @@
+name: Unit Tests
+
+run-name: Unit Tests for ${{ github.ref }}
+on:
+  push:
+    branches:
+      - main
+      - 'release/*'
+
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
