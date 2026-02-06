@@ -38,10 +38,20 @@ jobs:
 
       - name: Publish project
         run: |
-          dotnet publish $MAIN_APPLICATION_PATH -c Release -o $PUBLISH_FOLDER --no-restore
+          dotnet publish ${{ env.MAIN_APPLICATION_PATH }} -c Release -o ${{ env.PUBLISH_FOLDER }} --no-restore
+
+      - name: List publish output
+        run: |
+          Write-Host "Publish folder: ${{ env.PUBLISH_FOLDER }}"
+          if (Test-Path "${{ env.PUBLISH_FOLDER }}") {
+            Get-ChildItem -Path "${{ env.PUBLISH_FOLDER }}" -Recurse | Select-Object FullName, Length | Format-Table -AutoSize
+          } else {
+            Write-Host "Publish folder does not exist"
+            exit 1
+          }
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: CleanShortener
-          path: env.PUBLISH_FOLDER
+          path: ${{ env.PUBLISH_FOLDER }}
