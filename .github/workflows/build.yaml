@@ -16,6 +16,7 @@ on:
 env:
   PUBLISH_FOLDER: release
   MAIN_APPLICATION_PATH: CleanShortener/CleanShortener.csproj
+  ARTIFACT_NAME: CleanShortener
 
 jobs:
   build:
@@ -46,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: CleanShortener
+          name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.PUBLISH_FOLDER }}
 
       - name: Output publish folder
