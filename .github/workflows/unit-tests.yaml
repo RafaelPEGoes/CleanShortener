@@ -28,9 +28,7 @@ jobs:
           name: ${{ needs.build.outputs.publish_folder }}
 
       - name: Debug Artifact Download
-        run: |
-          Write-Host "Current working directory: $(pwd)" `
-          Write-Host dir
+        run: Tree
 
       - name: Run Unit Tests
         run: |
