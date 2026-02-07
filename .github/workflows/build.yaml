@@ -49,7 +49,3 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.PUBLISH_FOLDER }}
-
-      # - name: Output publish folder
-      #   id: set-output
-      #   run: echo "artifact_name=${{ env.ARTIFACT_NAME }}" >> $env:GITHUB_OUTPUT
