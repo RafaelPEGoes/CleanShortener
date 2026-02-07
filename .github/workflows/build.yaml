@@ -11,7 +11,7 @@ on:
     outputs:
       publish_folder:
         description: Folder in which the application was published to.
-        value: ${{ env.PUBLISH_FOLDER }}
+        value: ${{ steps.set-output.outputs.publish_folder }}
 
 env:
   PUBLISH_FOLDER: release
