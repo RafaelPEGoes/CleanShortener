@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: $ {{ needs.build.outputs.publish_folder }}
+          name: ${{ needs.build.outputs.publish_folder }}
 
       - name: Run Unit Tests
         run: |
