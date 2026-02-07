@@ -22,11 +22,11 @@ jobs:
 
       - name: Run Unit Tests
         run: |
-          dotnet test CleanShortener.Tests\CleanShortener.Tests.csproj
-          --filter "FullyQualifiedName!~ArchitecturalTests"
-          --no-build
-          --configuration Release
-          --logger:"console;verbosity=detailed"
+          dotnet test CleanShortener.Tests\CleanShortener.Tests.csproj `
+          --filter "FullyQualifiedName!~ArchitecturalTests" `
+          --no-build `
+          --configuration Release `
+          --logger:"console;verbosity=detailed" `
           --logger:"html;logfilename=testResults.html"
 
       - name: Upload Results
