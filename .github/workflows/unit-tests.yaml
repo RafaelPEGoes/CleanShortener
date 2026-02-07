@@ -27,6 +27,24 @@ jobs:
         with:
           name: ${{ needs.build.outputs.publish_folder }}
 
+      - name: Debug Artifact Download
+        run: |
+          Write-Host "Current working directory: $(pwd)" `
+          Write-Host "Listing root workspace contents" `
+          Get-ChildItem -Path . -Force | Sort-Object FullName | Format-Table -AutoSize
+
+          $artifactName = "${{ needs.build.outputs.publish_folder }}"
+          Write-Host "Downloaded artifact name: $artifactName"
+
+          if (Test-Path $artifactName) {
+            Write-Host "Listing contents of downloaded artifact folder: $artifactName" `
+            Get-ChildItem -Path $artifactName -Recurse -Force | Select-Object FullName, Length | Format-Table -AutoSize `
+          } else {
+            Write-Host "Artifact folder '$artifactName' not found. Listing workspace recursively to help debug:" `
+            Get-ChildItem -Path . -Recurse -Force | Select-Object FullName, Length | Format-Table -AutoSize `
+            exit 1
+          }
+
       - name: Run Unit Tests
         run: |
           dotnet test CleanShortener.Tests\CleanShortener.Tests.csproj `
