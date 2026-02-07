@@ -46,3 +46,7 @@ jobs:
         with:
           name: CleanShortener
           path: ${{ env.PUBLISH_FOLDER }}
+
+      - name: Output
+        id: set-output
+        run: echo "publish_folder=${{ env.PUBLISH_FOLDER }}" >> $GITHUB_OUTPUT
