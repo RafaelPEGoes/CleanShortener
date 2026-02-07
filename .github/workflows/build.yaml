@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: windows-latest
     outputs:
-      artifact_name: ${{ steps.set-output.outputs.artifact_name }}
+      artifact_name: ${{ env.ARTIFACT_NAME }}
 
     steps:
       - uses: actions/checkout@v5
@@ -50,6 +50,6 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: ${{ env.PUBLISH_FOLDER }}
 
-      - name: Output publish folder
-        id: set-output
-        run: echo "artifact_name=${{ env.ARTIFACT_NAME }}" >> $env:GITHUB_OUTPUT
+      # - name: Output publish folder
+      #   id: set-output
+      #   run: echo "artifact_name=${{ env.ARTIFACT_NAME }}" >> $env:GITHUB_OUTPUT
