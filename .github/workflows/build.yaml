@@ -36,9 +36,9 @@ jobs:
 
       - name: Publish project
         run: |
-          dotnet publish ${{ env.MAIN_APPLICATION_PATH }} \
-          -c Release \
-          -o ${{ env.PUBLISH_FOLDER }} \
+          dotnet publish ${{ env.MAIN_APPLICATION_PATH }} `
+          -c Release `
+          -o ${{ env.PUBLISH_FOLDER }} `
           --no-restore
 
       - name: Upload artifact
