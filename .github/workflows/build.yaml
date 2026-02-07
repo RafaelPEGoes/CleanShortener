@@ -7,13 +7,11 @@ concurrency:
   cancel-in-progress: true
 
 on:
-  push:
-    branches:
-      - main
-      - 'release/*'
-  pull_request:
-    branches:
-      - main
+  workflow_call:
+    outputs:
+      publish_folder:
+        description: Folder in which the application was published to.
+        value: ${{ env.PUBLISH_FOLDER }}
 
 env:
   PUBLISH_FOLDER: release
@@ -38,7 +36,10 @@ jobs:
 
       - name: Publish project
         run: |
-          dotnet publish ${{ env.MAIN_APPLICATION_PATH }} -c Release -o ${{ env.PUBLISH_FOLDER }} --no-restore
+          dotnet publish ${{ env.MAIN_APPLICATION_PATH }}
+          -c Release
+          -o ${{ env.PUBLISH_FOLDER }}
+          --no-restore
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
