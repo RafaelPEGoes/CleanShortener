@@ -11,7 +11,7 @@ on:
     outputs:
       publish_folder:
         description: Folder in which the application was published to.
-        value: ${{ steps.set-output.outputs.publish_folder }}
+        value: ${{ jobs.build.outputs.publish_folder }}
 
 env:
   PUBLISH_FOLDER: release
@@ -20,6 +20,8 @@ env:
 jobs:
   build:
     runs-on: windows-latest
+    outputs:
+      publish_folder: ${{ steps.set-output.outputs.publish_folder }}
 
     steps:
       - uses: actions/checkout@v5
@@ -47,6 +49,6 @@ jobs:
           name: CleanShortener
           path: ${{ env.PUBLISH_FOLDER }}
 
-      - name: Output
+      - name: Output publish folder
         id: set-output
-        run: echo "publish_folder=${{ env.PUBLISH_FOLDER }}" >> $GITHUB_OUTPUT
+        run: echo "publish_folder=${{ env.PUBLISH_FOLDER }}" >> $env:GITHUB_OUTPUT
