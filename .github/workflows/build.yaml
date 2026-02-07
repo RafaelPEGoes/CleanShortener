@@ -1,0 +1,47 @@
+name: Build
+
+run-name: Build for ${{ github.ref }}
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches:
+      - main
+      - 'release/*'
+  pull_request:
+    branches:
+      - main
+
+env:
+  PUBLISH_FOLDER: release
+  MAIN_APPLICATION_PATH: CleanShortener/CleanShortener.csproj
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+          cache-dependency-path: '**/packages.lock.json'
+          cache: true
+
+      - name: Restore Dependencies
+        run: dotnet restore --locked-mode
+
+      - name: Publish project
+        run: |
+          dotnet publish ${{ env.MAIN_APPLICATION_PATH }} -c Release -o ${{ env.PUBLISH_FOLDER }} --no-restore
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CleanShortener
+          path: ${{ env.PUBLISH_FOLDER }}

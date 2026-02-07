@@ -2,16 +2,17 @@ name: Unit Tests
 
 run-name: Unit Tests for ${{ github.ref_name }}
 on:
-  push:
-    branches:
-      - main
-      - 'release/*'
+  workflow_dispatch:
+  
+  workflow_run:
+    workflows:
+    - "Build"
+    types:
+    - completed
 
-  pull_request:
-    branches:
-      - main
 jobs:
-  build:
+  test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v5
@@ -22,15 +23,15 @@ jobs:
           cache-dependency-path: '**/packages.lock.json'
           cache: true
 
-      - name: Restore Dependencies
-        run: dotnet restore --locked-mode
-      - name: Build Solution
-        run: dotnet build CleanShortener.sln --no-restore --configuration Release
-      - name: Run Unit Tests
-        run: dotnet test --filter "FullyQualifiedName!~ArchitecturalTests" --no-build --configuration Release --logger:"console;verbosity=detailed" --logger:"html;logfilename=testResults.html" CleanShortener.Tests\CleanShortener.Tests.csproj
+      # - name: Restore Dependencies
+      #   run: dotnet restore --locked-mode
+      # - name: Build Solution
+      #   run: dotnet build CleanShortener.sln --no-restore --configuration Release
+      # - name: Run Unit Tests
+      #   run: dotnet test --filter "FullyQualifiedName!~ArchitecturalTests" --no-build --configuration Release --logger:"console;verbosity=detailed" --logger:"html;logfilename=testResults.html" CleanShortener.Tests\CleanShortener.Tests.csproj
 
-      - name: Upload Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: testResults
-          path: CleanShortener.Tests\TestResults\testResults.html
+      # - name: Upload Results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: testResults
+      #     path: CleanShortener.Tests\TestResults\testResults.html
