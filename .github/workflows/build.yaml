@@ -11,7 +11,7 @@ on:
     outputs:
       publish_folder:
         description: Folder in which the application was published to.
-        value: ${{ jobs.build.outputs.publish_folder }}
+        value: ${{ jobs.build.outputs.artifact_name }}
 
 env:
   PUBLISH_FOLDER: release
@@ -22,7 +22,7 @@ jobs:
   build:
     runs-on: windows-latest
     outputs:
-      publish_folder: ${{ steps.set-output.outputs.publish_folder }}
+      artifact_name: ${{ steps.set-output.outputs.artifact_name }}
 
     steps:
       - uses: actions/checkout@v5
@@ -52,4 +52,4 @@ jobs:
 
       - name: Output publish folder
         id: set-output
-        run: echo "publish_folder=${{ env.PUBLISH_FOLDER }}" >> $env:GITHUB_OUTPUT
+        run: echo "artifact_name=${{ env.ARTIFACT_NAME }}" >> $env:GITHUB_OUTPUT
