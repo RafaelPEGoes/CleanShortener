@@ -1,6 +1,11 @@
 name: Unit Tests
 
 run-name: Unit Tests for ${{ github.ref_name }}
+
+concurrency:
+  group: unit-tests-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
