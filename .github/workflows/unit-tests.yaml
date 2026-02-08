@@ -27,7 +27,7 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: ${{ needs.build.outputs.publish_folder }}
+          name: ${{ needs.build.outputs.artifact_name }}
 
       - name: Debug Artifact Download
         run: Tree
