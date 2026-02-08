@@ -29,9 +29,6 @@ jobs:
         with:
           name: ${{ needs.build.outputs.artifact_name }}
 
-      - name: Debug Artifact Download
-        run: Tree
-
       - name: Run Unit Tests
         run: |
           dotnet test CleanShortener.Tests\CleanShortener.Tests.csproj `
