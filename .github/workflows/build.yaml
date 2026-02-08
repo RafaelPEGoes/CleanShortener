@@ -14,7 +14,7 @@ on:
         value: ${{ jobs.build.outputs.artifact_name }}
 
 env:
-  DLL_FOLDER: ./build
+  DLL_FOLDER: **/bin/Release/**
   ARTIFACT_NAME: CleanShortener
 
 jobs:
