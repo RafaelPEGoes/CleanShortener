@@ -9,8 +9,8 @@ concurrency:
 on:
   workflow_call:
     outputs:
-      dll_folder:
-        description: Folder in which the application was published to.
+      artifact_name:
+        description: Name of the artifact uploaded in GitHub containing the built DLLs
         value: ${{ jobs.build.outputs.artifact_name }}
 
 env:
