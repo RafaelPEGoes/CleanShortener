@@ -14,8 +14,8 @@ on:
         value: ${{ jobs.build.outputs.artifact_name }}
 
 env:
-  DLL_FOLDER: '**/bin/Release/**'
-    # '**/obj/Release/**'
+  BIN_FOLDER: '**/bin/Release/**'
+  OBJ_FOLDER: '**/obj/Release/**'
 
   ARTIFACT_NAME: CleanShortener
 
@@ -51,4 +51,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}
-          path: ${{ env.DLL_FOLDER }}
+          path: |
+            ${{ env.BIN_FOLDER }}
+            ${{ env.OBJ_FOLDER }}
