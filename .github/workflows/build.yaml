@@ -43,7 +43,6 @@ jobs:
         run: |
           dotnet build CleanShortener.sln `
           -c Release `
-          -o ${{ env.DLL_FOLDER }} `
           --no-restore
 
       - name: Upload artifact
