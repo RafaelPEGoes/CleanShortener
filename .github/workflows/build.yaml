@@ -1,21 +1,20 @@
 name: Build
 
-run-name: Build for ${{ github.ref }}
+run-name: Build for ${{ github.ref_name }}
 
 concurrency:
-  group: build-${{ github.ref }}
+  group: build-${{ github.ref_name }}
   cancel-in-progress: true
 
 on:
   workflow_call:
     outputs:
-      publish_folder:
+      dll_folder:
         description: Folder in which the application was published to.
         value: ${{ jobs.build.outputs.artifact_name }}
 
 env:
-  PUBLISH_FOLDER: release
-  MAIN_APPLICATION_PATH: CleanShortener/CleanShortener.csproj
+  DLL_FOLDER: ./build
   ARTIFACT_NAME: CleanShortener
 
 jobs:
@@ -37,15 +36,15 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore --locked-mode
 
-      - name: Publish project
+      - name: Build Solution
         run: |
-          dotnet publish ${{ env.MAIN_APPLICATION_PATH }} `
+          dotnet build CleanShortener.sln `
           -c Release `
-          -o ${{ env.PUBLISH_FOLDER }} `
+          -o ${{ DLL_FOLDER }}`
           --no-restore
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ARTIFACT_NAME }}
-          path: ${{ env.PUBLISH_FOLDER }}
+          path: ${{ env.DLL_FOLDER }}
