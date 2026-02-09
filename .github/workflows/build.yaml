@@ -1,27 +1,29 @@
 name: Build
 
-run-name: Build for ${{ github.ref }}
+run-name: Build for ${{ github.ref_name }}
 
 concurrency:
-  group: build-${{ github.ref }}
+  group: build-${{ github.ref_name }}
   cancel-in-progress: true
 
 on:
-  push:
-    branches:
-      - main
-      - 'release/*'
-  pull_request:
-    branches:
-      - main
+  workflow_call:
+    outputs:
+      artifact_name:
+        description: Name of the artifact uploaded in GitHub containing the built DLLs
+        value: ${{ jobs.build.outputs.artifact_name }}
 
 env:
-  PUBLISH_FOLDER: release
-  MAIN_APPLICATION_PATH: CleanShortener/CleanShortener.csproj
+  BIN_FOLDER: '**/bin/Release/**'
+  OBJ_FOLDER: '**/obj/Release/**'
+
+  ARTIFACT_NAME: CleanShortener
 
 jobs:
   build:
     runs-on: windows-latest
+    outputs:
+      artifact_name: ${{ env.ARTIFACT_NAME }}
 
     steps:
       - uses: actions/checkout@v5
@@ -36,12 +38,16 @@ jobs:
       - name: Restore Dependencies
         run: dotnet restore --locked-mode
 
-      - name: Publish project
+      - name: Build Solution
         run: |
-          dotnet publish ${{ env.MAIN_APPLICATION_PATH }} -c Release -o ${{ env.PUBLISH_FOLDER }} --no-restore
+          dotnet build CleanShortener.sln `
+          -c Release `
+          --no-restore
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: CleanShortener
-          path: ${{ env.PUBLISH_FOLDER }}
+          name: ${{ env.ARTIFACT_NAME }}
+          path: |
+            ${{ env.BIN_FOLDER }}
+            ${{ env.OBJ_FOLDER }}
